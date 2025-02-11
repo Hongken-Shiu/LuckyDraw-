@@ -1,0 +1,16 @@
+<div class="container"  [ngStyle]="backgroundStyle">
+  <h1>WELKIN | GENSHIN PACTED</h1>
+  
+  <div class="gacha-machine" [@gachaAnimation]="animationState">
+    <div class="knob"></div>
+    <div class="display">{{ winner}}</div>
+  </div>
+  <div>
+    <button class="draw-button" (click)="startDraw()" [disabled]="isDrawing">
+      {{ isDrawing ? 'Drawing...' : 'Gaccha Again' }}
+    </button>
+  </div>
+  <div *ngIf="winner" class="winner-message">
+    {{ winner }}! 🎉
+  </div>
+</div>
